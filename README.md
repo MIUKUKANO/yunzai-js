@@ -7,3 +7,4 @@ curl -o "./plugins/example/今日涩图.js" https://raw.githubusercontent.com/MI
 ```
 #### 使用说明
 今日涩图
+触发
