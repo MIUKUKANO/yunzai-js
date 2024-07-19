@@ -25,7 +25,7 @@ export class SeTu extends plugin {
       priority: 5000,
       rule: [
         {
-          reg: '^今日涩图$',
+          reg: '^#?今日涩图|涩涩$',
           fnc: 'sendSeTu'
         }
       ]
