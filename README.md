@@ -1,4 +1,4 @@
-## 今日涩图.js
+## Anosu.js
 #### 介绍
 使用了 Anosu api｜
 
