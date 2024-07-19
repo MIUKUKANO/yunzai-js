@@ -34,6 +34,9 @@ export class SeTu extends plugin {
   }
 
   async sendSeTu(e) {
+    // 发送准备开始涩涩的消息
+    await e.reply('准备开始涩涩！');
+
     const queryString = new URLSearchParams(params).toString();
     const url = `https://image.anosu.top/pixiv/json?${queryString}`;
 
