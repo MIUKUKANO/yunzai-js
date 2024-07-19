@@ -19,7 +19,7 @@ const params = {
 export class SeTu extends plugin {
   constructor() {
     super({
-      name: '每日涩图',
+      name: 'Anosu',
       dsc: '发送今日涩图',
       event: 'message',
       priority: 5000,
