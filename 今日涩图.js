@@ -4,11 +4,11 @@ import plugin from '../../lib/plugins/plugin.js';
 import common from '../../lib/common/common.js';
 
 //默认值为true，即使用转发消息 | false，即关闭转发消息 | ！！！！！建议当开启18+时务必开启 |修改好像也不用重启|
-const useForwardMsg = false;
+const useForwardMsg = true;
 
 // 可配置的参数 | 修改这些参数好像无需重启 |
 const params = {
-  num: 2,           // 图片数量，范围在1-30之间，超出范围会返回一个空列表
+  num: 1,           // 图片数量，范围在1-30之间，超出范围会返回一个空列表
   r18: 0,           // 年龄分级 '0' 全龄 | '1' 18+ | '2' 随机二选一
   size: 'original', // 图片尺寸 "original": "原图" | "regular": "作品详情页的略缩图" | "small": "p站首页的略缩图"
   keyword: '',      // 图片tags关键字，关键词均来自p站，可用'|'作为分隔符，如 'genshin|loli'
