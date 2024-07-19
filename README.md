@@ -6,4 +6,4 @@
 curl -o "./plugins/example/今日涩图.js" https://github.com/MIUKUKANO/yunzai-js/blob/main/%E4%BB%8A%E6%97%A5%E6%B6%A9%E5%9B%BE.js
 ```
 #### 使用说明
-今日涩图 触发
+今日涩图
