@@ -59,7 +59,6 @@ export class SeTu extends plugin {
       const imageMessages = data.map(imageData => {
         const { title, user, pid, r18, tags, url: imageUrl } = imageData;
         return [
-          segment.text(`【涩图】\n`),
           segment.text(`标题：${title}\n`),
           segment.text(`画师：${user}\n`),
           segment.text(`Pid：${pid}\n`),
