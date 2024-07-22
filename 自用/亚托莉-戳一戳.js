@@ -228,7 +228,8 @@ export class chuo extends plugin {
             else {
                 logger.info('[反击生效]')
                 e.reply('你戳得过我吗');
-            }
+                await e.group.pokeMember(e.operator_id)
+                }
 
             return true;
         }
