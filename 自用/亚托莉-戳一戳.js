@@ -6,7 +6,7 @@ import moment from "moment";
 import fs from 'fs'
 const path = process.cwd()
 
-// 如使用非icqq请在此处填写机器人QQ号
+// 请在此处填写机器人QQ号
 let BotQQ = '1353257046'
 
 // 支持信息详见文件最下方
