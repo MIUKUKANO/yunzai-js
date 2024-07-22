@@ -7,7 +7,7 @@ import fs from 'fs'
 const path = process.cwd()
 
 // 请在此处填写机器人QQ号
-let BotQQ = '1353257046'
+let BotQQ = ''
 
 // 支持信息详见文件最下方
 // 在这里设置事件概率,请保证概率加起来小于1，少于1的部分会触发反击
