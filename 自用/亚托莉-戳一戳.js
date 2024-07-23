@@ -6,7 +6,7 @@ import moment from "moment";
 import fs from 'fs'
 const path = process.cwd()
 
-// 请在此处填写机器人QQ号
+// 请在此处填写机器人QQ号 (喵崽icqq好像可以不用填，但是trss好像必须填，反正我是这样的)
 let BotQQ = ''
 
 // 支持信息详见文件最下方
@@ -17,6 +17,7 @@ let reply_voice = 0.4 // 语音回复概率
 let mutepick = 0.01 // 禁言概率
 let example = 0.02 // 拍一拍表情概率
 // 剩下的概率就是反击
+let master = "主人"
 let mutetime = 1 // 禁言时间设置，单位分钟，如果设置0则为自动递增，如需关闭禁言请修改触发概率为0
 
 // 定义图片和语音文件存放路径
@@ -81,7 +82,7 @@ export class chuo extends plugin {
             }
             e.reply([
                 segment.at(e.operator_id),
-                `\n你想干嘛, 竟敢戳我亲爱滴主人, 胆子好大啊你`,
+                `\n你想干嘛, 竟敢戳我亲爱滴${master}, 胆子好大啊你`,
                 segment.image(path + `/resources/chuochuo/pic/生气.gif`),
             ], true)
             await common.sleep(1000);
