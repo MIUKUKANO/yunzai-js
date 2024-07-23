@@ -6,14 +6,14 @@ import moment from "moment";
 import fs from 'fs'
 const path = process.cwd()
 
-// 请在此处填写机器人QQ号 (喵崽icqq好像可以不用填，但是trss好像必须填，反正我是这样的)
+// 请在此处填写机器人QQ号
 let BotQQ = ''
 
 // 支持信息详见文件最下方
 // 在这里设置事件概率,请保证概率加起来小于1，少于1的部分会触发反击
 let reply_text = 0.2 // 文字回复概率
-let reply_img = 0.3 // 图片回复概率
-let reply_voice = 0.4 // 语音回复概率
+let reply_img = 0.25 // 图片回复概率
+let reply_voice = 0.45 // 语音回复概率
 let mutepick = 0.01 // 禁言概率
 let example = 0.02 // 拍一拍表情概率
 // 剩下的概率就是反击
@@ -42,8 +42,11 @@ const voiceFiles = getFiles(voice_path, voiceFormats);
 
 // 回复文字列表
 const word_list = [
-    '没事找事,真是的',
-    '地球也包括我吗？'
+	  "啊我真是太高性能了",
+    'Ciallo～(∠・ω< )⌒☆',
+    '>_<！！！',
+    'o(´^｀)o',
+    '地球也包括我吗？',
     '你再戳,亚托莉要生气了哦',
     '好吃就是高兴嘛！',
     '我可是高性能机器人！',
@@ -75,6 +78,7 @@ export class chuo extends plugin {
     }
 
     async chuoyichuo(e) {
+        
         if (cfg.masterQQ.includes(e.target_id)) {
             logger.info('[戳主人生效]')
             if (cfg.masterQQ.includes(e.operator_id) || cfg.qq == e.operator_id || BotQQ == e.operator_id) {
@@ -89,7 +93,7 @@ export class chuo extends plugin {
             e.group.pokeMember(e.operator_id);
             return true
         }
-
+        
         if (e.target_id == cfg.qq || BotQQ == e.target_id) {
             logger.info('[戳一戳生效]')
             let count = await redis.get(`Yz:pokecount:`);
@@ -235,4 +239,4 @@ export class chuo extends plugin {
             return true;
         }
     }
-}
+	}
