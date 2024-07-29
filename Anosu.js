@@ -30,7 +30,7 @@ export class SeTu extends plugin {
         }
       ]
     });
-    console.log('SeTu 插件已初始化。');
+  
   }
 
   async sendSeTu(e) {
