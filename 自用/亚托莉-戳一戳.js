@@ -11,11 +11,11 @@ let BotQQ = ''
 
 // 支持信息详见文件最下方
 // 在这里设置事件概率,请保证概率加起来小于1，少于1的部分会触发反击
-let reply_text = 0.2 // 文字回复概率
-let reply_img = 0.25 // 图片回复概率
-let reply_voice = 0.45 // 语音回复概率
-let mutepick = 0.01 // 禁言概率
-let example = 0.02 // 拍一拍表情概率
+let reply_text = 0 // 文字回复概率
+let reply_img = 0 // 图片回复概率
+let reply_voice = 1 // 语音回复概率
+let mutepick = 0 // 禁言概率
+let example = 0 // 拍一拍表情概率
 // 剩下的概率就是反击
 let master = "主人"
 let mutetime = 1 // 禁言时间设置，单位分钟，如果设置0则为自动递增，如需关闭禁言请修改触发概率为0
@@ -64,8 +64,8 @@ const ciku_ = [
 export class chuo extends plugin {
     constructor() {
         super({
-            name: '戳一戳',
-            dsc: '戳一戳机器人触发效果',
+            name: '亚托莉-戳一戳',
+            dsc: '戳一戳亚托莉触发效果',
             event: 'notice.group.poke',
             priority: 5000,
             rule: [
