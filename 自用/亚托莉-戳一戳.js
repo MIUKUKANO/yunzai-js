@@ -1,13 +1,10 @@
 import plugin from '../../lib/plugins/plugin.js'
-import { segment } from 'icqq'
+import { segment } from 'oicq'
 import cfg from '../../lib/config/config.js'
 import common from '../../lib/common/common.js'
 import moment from "moment";
 import fs from 'fs'
 const path = process.cwd()
-
-// 请在此处填写机器人QQ号
-let BotQQ = ''
 
 // 支持信息详见文件最下方
 // 在这里设置事件概率,请保证概率加起来小于1，少于1的部分会触发反击
@@ -78,10 +75,9 @@ export class chuo extends plugin {
     }
 
     async chuoyichuo(e) {
-        
         if (cfg.masterQQ.includes(e.target_id)) {
             logger.info('[戳主人生效]')
-            if (cfg.masterQQ.includes(e.operator_id) || cfg.qq == e.operator_id || BotQQ == e.operator_id) {
+            if (cfg.masterQQ.includes(e.operator_id) || e.self_id == e.operator_id) {
                 return;
             }
             e.reply([
@@ -94,12 +90,13 @@ export class chuo extends plugin {
             return true
         }
         
-        if (e.target_id == cfg.qq || BotQQ == e.target_id) {
+        if (e.target_id == e.self_id) {
             logger.info('[戳一戳生效]')
             let count = await redis.get(`Yz:pokecount:`);
-            let usercount = mutetime - 1;
+            let group = Bot.pickGroup(e.group_id);
+            let usercount = mutetime - 1
             if (mutetime == 0) {
-                usercount = await redis.get('Yz:pokecount' + e.operator_id + ':');
+                usercount = await redis.get('Yz:pokecount' + e.operator_id + ':')
             }
 
             // 当前时间
